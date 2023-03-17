@@ -12,7 +12,7 @@
     <!-- Styles -->
 
 
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@2.51.4/dist/full.css">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script src="{{ asset('js/app.js') }}"></script>
     @vite('resources/css/app.css')
