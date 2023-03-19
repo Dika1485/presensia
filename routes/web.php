@@ -15,13 +15,31 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
+// ------------------------------------------------------------------
+
+Route::get('/classes', function () {
+    return view('class');
+})->middleware(['auth', 'verified'])->name('classes');
+
+
+
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('class');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+
 
 Route::get('/password', function () {
     return view('password');
