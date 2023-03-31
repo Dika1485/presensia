@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('listpresensi', function (Blueprint $table) {
             $table->id('listpresensi_id');
             $table->foreignId('presensi_id')->constrained('presensi', 'presensi_id');
-            $table->foreignId('user_id')->constrained('users');
             $table->foreignId('ket_id')->constrained('ket', 'ket_id');
+            $table->string('murid');
             $table->dateTime('time');
         });
     }
