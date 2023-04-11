@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ClassController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\ProfileController;
@@ -22,6 +23,12 @@ Route::get('/classes', function () {
 })->middleware(['auth', 'verified'])->name('classes');
 
 
+Route::middleware('auth')->group(function(){
+    Route::controller(ClassController::class)->prefix('classes')->group(function(){
+        Route::get('create', 'create')->name('classes.create');
+        Route::post('create', 'store')->name('classes.create.store');
+    });
+});
 
 
 
